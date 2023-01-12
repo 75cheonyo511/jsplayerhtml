@@ -1,0 +1,40 @@
+<html> 
+ <!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset = utf-8">
+ <title> myaudio </title> 
+</head>
+<body>
+<audio id="myaudio">
+	<source id="sssSnd">
+	<source src="https://drive.google.com/uc?export=download&id=1RThxj59RUHQ4CAckr7Mon3R_I9qu40Ld">
+	<source src="https://drive.google.com/uc?export=download&id=17zkmTYl2K3xh9-n6VIxBLCG4hdtgAblx">
+	<source src="https://drive.google.com/uc?export=download&id=1OEvn7t400uAkxzR4rqvmFpXf2P2xRfx6">
+	<source src="https://drive.google.com/uc?export=download&id=1VjGp1K_pbA_ogGsRJnia_Bsx1BWEPoTl">
+</audio>
+<button id='play-next'>☆다음곡재생하기☆</button>
+<button id='stopBut'>■stop■</button>
+</body>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+	var index = 1;
+	$('#play-next').click(function() {
+		index++;
+		if(index > $('#myaudio source').length) index=2;
+		console.log( index + '번째 소스 재생' );
+
+		$('#myaudio source#sssSnd').attr('src',
+			$('#myaudio source:nth-child('+index+')').attr('src'));
+		$("#myaudio")[0].load();
+		$("#myaudio")[0].play();
+	});
+	
+	stopBut.onclick=function(){
+	    myaudio.pause();
+	sssSnd.pause();
+	    }
+</script>
+
+
+</html>
